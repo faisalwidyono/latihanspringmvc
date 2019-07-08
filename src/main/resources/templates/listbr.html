@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<style type="text/css">table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+		
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}</style>
+<meta charset="ISO-8859-1"></meta>
+<title>LIST BRAND</title>
+</head>
+<body>
+<h2>INI DAFTAR BRANDNYA</h2>
+
+			<table>
+  				<tr>
+   					<th>ID</th>
+    				<th>NAME</th>
+    				<th>PRODUCT TYPE</th>
+    				<th>ACTION DATA</th>
+
+  				</tr>
+  	 				<tr th:each="brand : ${listBrand}">
+  					<td th:text="${brand.id}"></td>
+  					<td th:text="${brand.name}"></td>
+  				 	<td th:text="${brand.product_type}"></td>
+					<td><a href="#" th:href="@{/brand/edit/} + ${brand.id}">  EDIT</a>
+						<a href="#" th:href="@{/brand/delete/} +${brand.id}">   HAPUS</a></td>
+  					
+  				</tr>
+			</table>
+			<a href="#" th:href="@{/brand/add/}">ADD DATA</a>
+		
+</body>
+</html>

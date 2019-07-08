@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Edit Data</title>
+</head>
+<body>
+		<form action="#" method="post" th:action="@{/brand/save}" th:object="${brand}">
+		  
+		  
+		  NAME:<br/>
+		  <input type="text" th:field="*{name}" />
+		  <br/>
+		  PRODUCT TYPE:<br/>
+		  <input type="text" th:field="*{product_type}" />
+		  <br/><br/>
+		  <input type="submit" value="Save" />
+		</form>
+</body>
+</html>
